@@ -1,10 +1,15 @@
 class Slider {
   constructor(rootSliderClass, navigationPositionClass) {
     this.rootSliderNode = document.querySelector(rootSliderClass);
+
+    if (!this.rootSliderNode) {
+      throw Error("Нет родительского блока");
+    }
+
     this.slides = [...this.rootSliderNode.children];
 
-    if (!this.rootSliderNode || !this.slides) {
-      throw Error("Нет родительского класса или дочерних элементов");
+    if (!this.slides) {
+      throw Error("Нет дочерних элементов");
     }
 
     for (let i = 0; i < this.slides.length; i++) {
@@ -57,10 +62,6 @@ class Slider {
   increaseOrDercireSlide(num) {
     let newSlideNum = this.currentSlide + num;
 
-    console.log(num);
-    console.log(this.currentSlide);
-    console.log(newSlideNum);
-
     if (newSlideNum < 0) {
       newSlideNum = this.slides.length - 1;
     } else if (newSlideNum > this.slides.length - 1) {
@@ -71,28 +72,15 @@ class Slider {
   }
 
   navigateToSlide(id) {
-    console.log(id);
     this.currentSlide = id;
     let newMargin = "0";
+
     if (id !== 0) {
       newMargin = `-${id * 100}%`;
     }
-    console.log(newMargin);
+
     this.slides[0].style.marginLeft = newMargin;
   }
 }
 
-const arrowLeft = document.querySelector(".slader-navigation__arrow-left");
-const arrowRight = document.querySelector(".slader-navigation__arrow-right");
-const firstSlide = document.querySelector(".image-container > img:first-child");
-
-// arrowLeft.addEventListener("click", () => {
-//   firstSlide.style.marginLeft = "-100%";
-// });
-// arrowRight.addEventListener("click", () => {
-//   firstSlide.style.marginLeft = "0";
-// });
-
 const slader = new Slider(".image-container", "navigation-right-end");
-
-console.log(slader);
