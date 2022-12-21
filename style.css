@@ -1,0 +1,18 @@
+.slader-navigation__dot {
+  width: 9.5px;
+  border-radius: 30px;
+  height: 9.5px;
+  margin: 0 8px;
+  background-color: white;
+}
+.slader-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-container {
+  width: 679px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+}

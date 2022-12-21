@@ -1,0 +1,50 @@
+.image-container {
+  position: relative;
+}
+
+.slide {
+  -webkit-transition: width 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  -moz-transition: width 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  -o-transition: width 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: margin 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.ps-navigation-bottom-center {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slader-navigation__dot {
+  width: 9.5px;
+  border-radius: 30px;
+  height: 9.5px;
+  margin: 0 8px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.arrow-left,
+.arrow-right {
+  position: relative;
+  width: 41px;
+  height: 14px;
+  cursor: pointer;
+}
+.arrow-left {
+  margin-right: 8px;
+}
+.arrow-right {
+  margin-left: 8px;
+}
+.arrow-left::before {
+  content: url(./images/arrow-left.svg);
+  position: absolute;
+}
+.arrow-right::before {
+  content: url(./images/arrow-right.svg);
+  position: absolute;
+}
