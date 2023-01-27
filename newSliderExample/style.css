@@ -1,0 +1,84 @@
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.slider-container {
+  width: 500px;
+  height: 500px;
+  /* overflow: hidden; */
+  margin: 100px auto 0;
+  border: 5px solid black;
+  position: relative;
+}
+
+.slide {
+  width: 500px;
+  height: 500px;
+}
+
+/* .slider-wrap {
+  margin: auto 0;
+  width: 600%;
+  display: inline-block;
+  transition: 50% 50%;
+  transition: transform 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+} */
+
+.flex {
+  display: flex;
+  margin: 100px auto 0;
+  justify-content: center;
+}
+
+.left {
+  margin-right: 100px;
+  background-color: red;
+}
+
+.right {
+  background-color: red;
+}
+
+.ps-navigation-bottom-center {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+.slader-navigation__dot {
+  width: 9.5px;
+  border-radius: 30px;
+  height: 9.5px;
+  margin: 0 8px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.arrow-left,
+.arrow-right {
+  position: relative;
+  width: 41px;
+  height: 14px;
+  cursor: pointer;
+}
+.arrow-left {
+  margin-right: 8px;
+}
+.arrow-right {
+  margin-left: 8px;
+}
+.arrow-left::before {
+  content: url(./images/arrow-left.svg);
+  position: absolute;
+}
+.arrow-right::before {
+  content: url(./images/arrow-right.svg);
+  position: absolute;
+}
