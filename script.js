@@ -6,6 +6,8 @@ class Slider {
       throw Error("Нет родительского блока");
     }
 
+    this.rootSliderNode.classList.add("slider-container");
+
     this.slides = [...this.rootSliderNode.children];
 
     if (!this.slides) {
@@ -24,11 +26,11 @@ class Slider {
   initNavigation(navigationPositionClass) {
     const navigationDiv = document.createElement("div");
 
-    if (!navigationPositionClass) {
-      navigationDiv.classList.add(this.navigationClass.replace(".", ""));
-    } else {
-      navigationDiv.classList.add("ps-navigation-bottom-center");
+    if (navigationPositionClass) {
+      console.log(navigationPositionClass.replace(".", ""));
+      navigationDiv.classList.add(navigationPositionClass.replace(".", ""));
     }
+    navigationDiv.classList.add("ps-navigation-bottom-center");
 
     navigationDiv.appendChild(this.createArrow("arrow-left", -1));
 
@@ -72,6 +74,7 @@ class Slider {
   }
 
   navigateToSlide(id) {
+    console.log(id);
     this.currentSlide = id;
     let newMargin = "0";
 
@@ -83,4 +86,9 @@ class Slider {
   }
 }
 
-const slader = new Slider(".image-container", "navigation-right-end");
+//const slader = new Slider(".promos-to-slide", "navigation-right-end");
+
+window.addEventListener("load", () => {
+  console.log("iuhgu");
+  const slader1 = new Slider(".promos-to-slide", "ps-navigation-start-bottom");
+});
